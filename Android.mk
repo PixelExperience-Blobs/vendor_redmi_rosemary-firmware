@@ -8,7 +8,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($($(TARGET_DEVICE)),rosemary)
+ifeq ($(TARGET_DEVICE),rosemary)
 
 $(info Including firmware for rosemary...)
 
