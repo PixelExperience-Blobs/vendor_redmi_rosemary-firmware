@@ -3,7 +3,7 @@
 ## What is this?
 
 A firmware tree to...ship firmware with builds for the
-Redmi Note 10S/11 SE and POCO M5S?
+Redmi Note 10S?
 
 # Getting started
 
@@ -15,8 +15,8 @@ Manifest:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest>
-    <remote name="yourremote" revision="eleven" clone-depth="1" />
-    <project name="android_vendor_redmi_rosemary-firmware" path="vendor/redmi/rosemary-firmware" remote="yourremote" />
+    <remote name="yourremote" fetch="https://gitlab.pixelexperience.org/android/vendor-blobs" revision="thirteen" clone-depth="1" />
+    <project name="vendor_redmi_rosemary-firmware" path="vendor/redmi/rosemary-firmware" remote="yourremote" />
 </manifest>
 ```
 
@@ -26,9 +26,9 @@ Device tree dependencies file:
 [
   {
     "remote": "yourremote",
-    "repository": "android_vendor_redmi_rosemary-firmware",
+    "repository": "vendor_redmi_rosemary-firmware",
     "target_path": "vendor/redmi/rosemary-firmware",
-    "branch": "eleven",
+    "branch": "thirteen",
     "clone_depth": "1"
   }
 ]
@@ -37,7 +37,7 @@ Device tree dependencies file:
 Manual cloning:
 
 ```bash
-git clone <url of this repo> -b eleven vendor/redmi/rosemary-firmware --depth=1 --no-tags --single-branch
+git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_redmi_rosemary-firmware -b eleven vendor/redmi/rosemary-firmware --depth=1 --no-tags --single-branch
 ```
 
 > These are example entries, you need to replace the relevant stuff
@@ -58,10 +58,10 @@ And lastly, build:
 ```bash
 source build/vendorsetup.sh
 lunch rom_codename-variant
-mka romota
+m otapackage
 ```
 
-> Of course replace `rom_codename-variant` and `romota` with the
+> Of course replace `rom_codename-variant` and `otapackage` with the
 > relevant stuff from ROM manifest/guide.
 
 # Additional information for geeks
@@ -77,16 +77,16 @@ mka romota
 **Android version compatibility**:
 * All Android 11 ROMs
 * Android 12 ROMs based on MIUI 12.5.16.0.RKLMIXM blobs
+* Android 13 ROMs based on MIUI 12.5.16.0.RKLMIXM blobs
 
 **Recovery compatibility**:
 * All TWRP variants
-* OrangeFox for Android 11
+* All OrangeFox variants
+* Custom ROMs' own recoveries
 
-**MIUI version compatibility**: Any MIUI version that doesn't increment
-ARB index - Anything up to 13.0.8.0.SKLMIXM as of the date of this tree.
-(9/24/2022)
+**MIUI version compatibility**: Any MIUI version.
 
 **Variant compatibility**:
-* `rosemary` (Redmi Note 10S Global, Redmi Note 11 SE, POCO M5S)
+* `rosemary` (Redmi Note 10S Global/NFC)
 * `secret` (Redmi Note 10S India)
 * `maltose` (Redmi Note 10S Latin America)
