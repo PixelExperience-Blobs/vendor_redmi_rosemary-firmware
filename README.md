@@ -3,7 +3,7 @@
 ## What is this?
 
 A firmware tree to...ship firmware with builds for the
-Redmi Note 10S?
+Redmi Note 10S and 11 SE?
 
 # Getting started
 
@@ -70,14 +70,14 @@ m otapackage
 
 **ROM**: MIUI
 
-**Version**: 12.5.16.0.RKLMIXM
+**Version**: 12.5.19.0.RKLINXM
 
 ## Compatibility
 
 **Android version compatibility**:
 * All Android 11 ROMs
-* Android 12 ROMs based on MIUI 12.5.16.0.RKLMIXM blobs
-* Android 13 ROMs based on MIUI 12.5.16.0.RKLMIXM blobs
+* Android 12 ROMs based on MIUI 12.5.x.x.RKL..XM blobs
+* Android 13 ROMs based on MIUI 12.5.x.x.RKL..XM blobs
 
 **Recovery compatibility**:
 * All TWRP variants
@@ -88,5 +88,5 @@ m otapackage
 
 **Variant compatibility**:
 * `rosemary` (Redmi Note 10S Global/NFC)
-* `secret` (Redmi Note 10S India)
+* `secret` (Redmi Note 10S/11 SE India)
 * `maltose` (Redmi Note 10S Latin America)
